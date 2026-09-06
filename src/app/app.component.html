@@ -1,9 +1,28 @@
-<h1>{{ title }}</h1>
+<div>
 
-{{messages}}
+  <h1>User</h1>
+  <form #userForm="ngForm" (ngSubmit)="submitForm(userForm)">
+    <div>
+      <label>Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        [(ngModel)]="user.name"
+        required
+      />
+    </div>
+    <div>
+      <label>Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        [(ngModel)]="user.email"
+        required
+      />
+    </div>
+    <button type="submit" [disabled]="userForm.invalid || !validateEmail()"]>Submit</button>
+  </form>
 
-<h1>Posts</h1>
-<div *ngFor="let post of posts">
-  <h3>{{ post.title }}</h3>
-  <p>{{ post.body }}</p>
 </div>
