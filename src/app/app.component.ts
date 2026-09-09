@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-root',
@@ -7,22 +6,11 @@ import {NgForm} from "@angular/forms";
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'Forms';
 
-  user : { name: string; email: string } = {
-    name: '',
-    email: '',
-  }
+  tasks: string[] = ['Task 1', 'Task 2', 'Task 3'];
 
-  submitForm(form: NgForm) : void {
-    if (form.valid) {
-      console.log(form.value, this.user);
-    }
-  }
-
-  validateEmail() : boolean {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(this.user.email);
+  deleteTask(task: string) {
+    this.tasks = this.tasks.filter(t => t !== task);
   }
 
 }
