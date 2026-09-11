@@ -50,6 +50,8 @@ export class NoteFormComponent implements OnInit, OnChanges {
 
     const note: Note = this.noteForm.value;
 
+    console.log(note);
+
     if(this.isEdit) {
       this.noteService.updateNote(note);
       this.noteService.setEditable(false);
@@ -57,8 +59,6 @@ export class NoteFormComponent implements OnInit, OnChanges {
       this.noteService.createNote(note);
     }
 
-    console.log(note);
-    // Save it on notes array of service
     this.noteForm.reset();
   }
 
