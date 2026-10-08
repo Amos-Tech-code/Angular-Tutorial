@@ -5,11 +5,13 @@ import {BootstrapTutorialComponent} from "./learning/bootstrap-tutorial/bootstra
 import {HtmlCssComponent} from "./learning/html-css/html-css.component";
 import {HomeComponent} from "./learning/home/home.component";
 import {PageNotFoundComponent} from "./pages/page-not-found/page-not-found.component";
+import {ParentComponent} from "./learning/parent/parent.component";
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'html-css', component: HtmlCssComponent},
   {path: 'bootstrap-tutorial', component: BootstrapTutorialComponent},
+  {path: 'component', component: ParentComponent},
   {path: '**', component: PageNotFoundComponent}
 ];
 

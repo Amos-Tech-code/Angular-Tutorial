@@ -8,6 +8,8 @@ import { BootstrapTutorialComponent } from './learning/bootstrap-tutorial/bootst
 import { HtmlCssComponent } from './learning/html-css/html-css.component';
 import { HomeComponent } from './learning/home/home.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { ParentComponent } from './learning/parent/parent.component';
+import { ChildComponent } from './learning/child/child.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
     HtmlCssComponent,
     HomeComponent,
     PageNotFoundComponent,
+    ParentComponent,
+    ChildComponent,
   ],
   imports: [
     BrowserModule,
