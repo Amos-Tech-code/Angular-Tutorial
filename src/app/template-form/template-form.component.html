@@ -1,0 +1,9 @@
+<h3>Favorite Color: (Template Form)</h3>
+
+<div>
+  <input type="text" [(ngModel)]="favoriteColor" #colorInput="ngModel">
+</div>
+
+<p>Favorite Color: {{ favoriteColor }}</p>
+
+<button (click)="updateColor()">Update Color</button>
