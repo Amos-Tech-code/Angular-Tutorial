@@ -1,0 +1,52 @@
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit($event)">
+
+  <div><label for="first-name">First Name: </label></div>
+  <div><input type="text" id="first-name" formControlName="firstName"></div>
+
+  @if (profileForm.get('firstName')?.invalid &&
+    profileForm.get('firstName')?.touched)  {
+    <div>First Name is required</div>
+  }
+
+  <div><label for="last-name">Last Name: </label></div>
+  <div><input type="text" id="last-name" formControlName="lastName"></div>
+
+  <div formGroupName="address">
+    <div><label for="street">Street Name: </label></div>
+    <div><input type="text" id="street" formControlName="street"></div>
+
+    <div><label for="city">City: </label></div>
+    <div><input type="text" id="city" formControlName="city"></div>
+
+    <div><label for="state">State: </label></div>
+    <div><input type="text" id="state" formControlName="state"></div>
+
+    <div><label for="zip">Zip: </label></div>
+    <div><input type="text" id="zip" formControlName="zip"></div>
+
+  </div>
+
+  <div formArrayName="aliases">
+    <h2>Aliases</h2>
+    <button type="button" (click)="addAlias()">+ Add Alias</button>
+
+    @for (alias of aliases.controls; track $index; let index = $index) {
+      <div>
+        <label>alias - {{ index }}</label>
+      </div>
+      <div><input type="text" id="alias-{{ index }}" [formControlName]="index">
+      </div>
+    }
+  </div>
+
+  <div>
+    <button type="button" (click)="updateProfile()">Update Values</button>
+    <button type="submit" [disabled]="profileForm.invalid">Submit</button>
+  </div>
+
+  <div>
+    <h3>Form Value:</h3>
+    <pre>{{ formValue | json }}</pre>
+  </div>
+
+</form>
