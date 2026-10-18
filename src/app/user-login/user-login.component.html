@@ -1,1 +1,23 @@
-<p>user-login works!</p>
+<div class="container">
+  <form [formGroup]="userLoginForm" (ngSubmit)="onSubmit($event)">
+
+    <div><label for="name">Email: </label></div>
+    <div><input type="text" id="name" formControlName="email"></div>
+
+    <div><label for="age">Password: </label></div>
+    <div><input type="text" id="age" formControlName="password"></div>
+
+    <!--<div><label for="email">Email: </label></div>
+    <div><input type="text" id="email" formControlName="email"></div>-->
+
+    <div>
+      <button type="button" (click)="updateValues()">Update Values</button>
+      <button type="submit" [disabled]="userLoginForm.invalid">Submit</button>
+    </div>
+
+  </form>
+
+  <div>
+    <p appHighlight>Highlight me!</p>
+  </div>
+</div>
