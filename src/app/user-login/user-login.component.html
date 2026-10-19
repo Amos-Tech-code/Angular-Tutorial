@@ -5,19 +5,26 @@
     <div><input type="text" id="name" formControlName="email"></div>
 
     <div><label for="age">Password: </label></div>
-    <div><input type="text" id="age" formControlName="password"></div>
+    <div><input type="password" id="age" formControlName="password"
+                [disabled]="isPasswordDisabled">
+    </div>
 
-    <!--<div><label for="email">Email: </label></div>
-    <div><input type="text" id="email" formControlName="email"></div>-->
-
+    <div><label *ngIf="userLoginForm.controls.rememberMe">Remember Me: </label></div>
+    <div><input type="checkbox" formControlName="rememberMe"></div>
     <div>
-      <button type="button" (click)="updateValues()">Update Values</button>
-      <button type="submit" [disabled]="userLoginForm.invalid">Submit</button>
+      <button type="button" (click)="toggleRememberMe()">Toggle Remember Me Control</button>
+
+      <button type="button" (click)="togglePassword()">Toggle password</button>
     </div>
 
   </form>
 
   <div>
-    <p appHighlight>Highlight me!</p>
+    <p>Form Value: {{ userLoginForm.value | json }}</p>
+    <p>Form Value including disabled: {{ userLoginForm.getRawValue() | json }}</p>
   </div>
+
+<!--  <div>-->
+<!--    <p appHighlight>Highlight me!</p>-->
+<!--  </div>-->
 </div>
