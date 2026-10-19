@@ -10,4 +10,10 @@ export class AppComponent {
 
   title = 'Angular Tutorial';
 
+  currentUserName = 'Alice'; // Initial value
+
+  changeName() {
+    this.currentUserName = 'Bob'; // Changes the bound value
+  }
+
 }

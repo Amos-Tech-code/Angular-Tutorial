@@ -7,6 +7,7 @@ import {ReactiveFormComponent} from "./reactive-form/reactive-form.component";
 import {TemplateFormComponent} from "./template-form/template-form.component";
 import {ProfileEditorComponent} from "./profile-editor/profile-editor.component";
 import {UserLoginComponent} from "./user-login/user-login.component";
+import {LifecycleComponent} from "./lifecycle/lifecycle.component";
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import {UserLoginComponent} from "./user-login/user-login.component";
     TemplateFormComponent,
     ProfileEditorComponent,
     UserLoginComponent,
+    LifecycleComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,15 @@
 <!--<app-reactive-form></app-reactive-form>-->
 <!--<app-template-form></app-template-form>-->
 <!--<app-profile-editor></app-profile-editor>-->
-<app-user-login></app-user-login>
+<!--<app-user-login></app-user-login>-->
+
+<div style="padding: 20px;">
+  <h2>Testing Lifecycle Hooks</h2>
+
+  <!-- 1. Pass the parent property down to the child -->
+  <app-lifecycle [name]="currentUserName"></app-lifecycle>
+
+  <!-- 2. A button to change the data dynamically -->
+  <button (click)="changeName()">Change User Name</button>
+</div>
+
