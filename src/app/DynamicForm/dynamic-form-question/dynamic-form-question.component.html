@@ -20,4 +20,9 @@
       }
     </select>
   }
+
+  <div *ngIf="!isValid" class="alert alert-danger">
+    {{ question.label }} is required.
+  </div>
+
 </div>

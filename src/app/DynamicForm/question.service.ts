@@ -31,6 +31,14 @@ export class QuestionService {
       }),
 
       new TextBox({
+        key: 'lastName',
+        label: 'Last Name',
+        value: 'Killer man',
+        required: true,
+        order: 4,
+      }),
+
+      new TextBox({
         key: 'emailAddress',
         label: 'Email Address',
         type: 'email',

@@ -1,7 +1,7 @@
 import {Component, inject} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {HighlightDirective} from "../directives/high-light-directive";
-import {JsonPipe} from "@angular/common";
+import {JsonPipe, NgIf} from "@angular/common";
 
 interface LoginForm {
   email: FormControl<string>;
@@ -14,6 +14,7 @@ interface LoginForm {
   imports: [
     ReactiveFormsModule,
     JsonPipe,
+    NgIf,
     //HighlightDirective
   ],
   templateUrl: './user-login.component.html',
