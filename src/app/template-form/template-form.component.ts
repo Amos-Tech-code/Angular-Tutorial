@@ -7,6 +7,7 @@ import {FormsModule, NgModel} from "@angular/forms";
     FormsModule
   ],
   templateUrl: './template-form.component.html',
+  standalone: true,
   styleUrl: './template-form.component.scss'
 })
 export class TemplateFormComponent {

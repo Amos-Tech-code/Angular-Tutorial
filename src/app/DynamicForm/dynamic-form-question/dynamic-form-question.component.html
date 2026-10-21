@@ -1,0 +1,23 @@
+<div class="form-group" [formGroup]="form">
+  <label [attr.for]="question.key">{{ question.label }}</label>
+  @if (question.controlType === 'textbox') {
+    <input
+      type="text"
+      formControlName="question.key"
+      [id]="question.key"
+      class="form-control"
+    >
+  }
+
+  @if (question.controlType === 'dropdown') {
+    <select
+      [id]="question.key"
+      [formControlName]="question.key"
+      class="form-control"
+    >
+      @for (opt of question.options; track opt.key) {
+        <option [value]="opt.value">{{ opt.key }}</option>
+      }
+    </select>
+  }
+</div>

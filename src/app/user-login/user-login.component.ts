@@ -17,6 +17,7 @@ interface LoginForm {
     //HighlightDirective
   ],
   templateUrl: './user-login.component.html',
+  standalone: true,
   styleUrl: './user-login.component.scss'
 })
 export class UserLoginComponent {

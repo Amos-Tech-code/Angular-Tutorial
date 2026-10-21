@@ -1,4 +1,8 @@
 <!--<app-reactive-form></app-reactive-form>-->
 <!--<app-template-form></app-template-form>-->
 <!--<app-profile-editor></app-profile-editor>-->
-<app-user-login></app-user-login>
+<!--<app-user-login></app-user-login>-->
+<div *ngIf="questions | async as questions" class="container">
+  <h2>Dynamic Forms</h2>
+  <app-dynamic-form [questions] = "questions"></app-dynamic-form>
+</div>

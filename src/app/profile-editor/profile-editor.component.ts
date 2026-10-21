@@ -9,6 +9,7 @@ import {JsonPipe} from "@angular/common";
     JsonPipe
   ],
   templateUrl: './profile-editor.component.html',
+  standalone: true,
   styleUrl: './profile-editor.component.scss'
 })
 export class ProfileEditorComponent {

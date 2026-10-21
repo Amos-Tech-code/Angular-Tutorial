@@ -1,4 +1,5 @@
-import {Component} from '@angular/core';
+import {Component, inject} from '@angular/core';
+import {QuestionService} from "./DynamicForm/question.service";
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,9 @@ import {Component} from '@angular/core';
 export class AppComponent {
 
   title = 'Angular Tutorial';
+
+  questionService = inject(QuestionService);
+  questions = this.questionService.getQuestions()
 
   currentUserName = 'Alice'; // Initial value
 

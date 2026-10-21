@@ -7,6 +7,7 @@ import {FormControl, ReactiveFormsModule, Validators} from "@angular/forms";
     ReactiveFormsModule
   ],
   templateUrl: './reactive-form.component.html',
+  standalone: true,
   styleUrl: './reactive-form.component.scss'
 })
 export class ReactiveFormComponent {

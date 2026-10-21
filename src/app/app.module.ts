@@ -8,10 +8,16 @@ import {TemplateFormComponent} from "./template-form/template-form.component";
 import {ProfileEditorComponent} from "./profile-editor/profile-editor.component";
 import {UserLoginComponent} from "./user-login/user-login.component";
 import {LifecycleComponent} from "./lifecycle/lifecycle.component";
+import {DynamicFormComponent} from "./DynamicForm/dynamic-form/dynamic-form.component";
+import {DynamicFormQuestionComponent} from "./DynamicForm/dynamic-form-question/dynamic-form-question.component";
+import {ReactiveFormsModule} from "@angular/forms";
+import {QuestionService} from "./DynamicForm/question.service";
 
 @NgModule({
   declarations: [
     AppComponent,
+    DynamicFormComponent,
+    DynamicFormQuestionComponent,
   ],
   imports: [
     BrowserModule,
@@ -21,8 +27,9 @@ import {LifecycleComponent} from "./lifecycle/lifecycle.component";
     ProfileEditorComponent,
     UserLoginComponent,
     LifecycleComponent,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [QuestionService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
