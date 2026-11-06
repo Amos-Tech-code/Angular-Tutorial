@@ -1,0 +1,24 @@
+<div class="products-container">
+
+  <mat-form-field appearance="outline" class="search-field">
+    <mat-label>Search Products</mat-label>
+    <input matInput [(ngModel)]="searchTerm" placeholder="e.g. headphones">
+  </mat-form-field>
+
+  <div class="product-grid">
+    @for (product of filteredProducts(); track product.id) {
+      <app-product-card
+        [product]="product"
+        (addToCart)="onAddToCart($event)"
+      >
+      </app-product-card>
+    } @empty {
+      <div class="empty-state">
+        <mat-icon>inventory_2</mat-icon>
+        <h3>No products available or match your search</h3>
+        <p>Check back later for new arrivals!</p>
+      </div>
+    }
+  </div>
+
+</div>
